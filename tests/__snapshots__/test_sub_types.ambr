@@ -1,0 +1,19 @@
+# serializer version: 1
+# name: TestGuid.test_full_url_permalink_default
+  '''
+  <guid>https://example.com</guid>
+  
+  '''
+# ---
+# name: TestGuid.test_uuid_force_permalink
+  '''
+  <guid isPermaLink="true">12345678-1234-5678-1234-567812345678</guid>
+  
+  '''
+# ---
+# name: TestGuid.test_uuid_permalink_default
+  '''
+  <guid isPermaLink="false">12345678-1234-5678-1234-567812345678</guid>
+  
+  '''
+# ---

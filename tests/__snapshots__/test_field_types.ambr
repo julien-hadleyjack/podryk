@@ -1,0 +1,293 @@
+# serializer version: 1
+# name: TestCData.test_escaping
+  '''
+  <cdata>
+    <value><![CDATA[This <bold>text</bold> is long & contains characters that need escaping.]]></value>
+  </cdata>
+  
+  '''
+# ---
+# name: TestCData.test_none
+  '''
+  <cdata/>
+  
+  '''
+# ---
+# name: TestCData.test_optional
+  '''
+  <cdata>
+    <value><![CDATA[This is some text.]]></value>
+  </cdata>
+  
+  '''
+# ---
+# name: TestCData.test_plain
+  '''
+  <cdata>
+    <value><![CDATA[This is some text.]]></value>
+  </cdata>
+  
+  '''
+# ---
+# name: TestDateTime.test_non_utc
+  '''
+  <datetime>
+    <value>Wed, 20 Dec 2000 14:00:00 +0100</value>
+  </datetime>
+  
+  '''
+# ---
+# name: TestDateTime.test_none
+  '''
+  <datetime/>
+  
+  '''
+# ---
+# name: TestDateTime.test_optional
+  '''
+  <datetime>
+    <value>Wed, 20 Dec 2000 14:00:00 +0000</value>
+  </datetime>
+  
+  '''
+# ---
+# name: TestDateTime.test_utc
+  '''
+  <datetime>
+    <value>Wed, 20 Dec 2000 14:00:00 +0000</value>
+  </datetime>
+  
+  '''
+# ---
+# name: TestDuration.test_ignored_microseconds
+  '''
+  <duration>
+    <value>00:01:10.100</value>
+  </duration>
+  
+  '''
+# ---
+# name: TestDuration.test_int
+  '''
+  <duration>
+    <value>00:00:20.000</value>
+  </duration>
+  
+  '''
+# ---
+# name: TestDuration.test_none
+  '''
+  <duration/>
+  
+  '''
+# ---
+# name: TestDuration.test_optional
+  '''
+  <duration>
+    <value>00:03:20.000</value>
+  </duration>
+  
+  '''
+# ---
+# name: TestDuration.test_timedelta
+  '''
+  <duration>
+    <value>00:01:10.200</value>
+  </duration>
+  
+  '''
+# ---
+# name: TestDurationInSeconds.test_ignored_microseconds
+  '''
+  <seconds>
+    <value>70</value>
+  </seconds>
+  
+  '''
+# ---
+# name: TestDurationInSeconds.test_int
+  '''
+  <seconds>
+    <value>20</value>
+  </seconds>
+  
+  '''
+# ---
+# name: TestDurationInSeconds.test_none
+  '''
+  <seconds/>
+  
+  '''
+# ---
+# name: TestDurationInSeconds.test_optional
+  '''
+  <seconds>
+    <value>200</value>
+  </seconds>
+  
+  '''
+# ---
+# name: TestDurationInSeconds.test_timedelta
+  '''
+  <seconds>
+    <value>70</value>
+  </seconds>
+  
+  '''
+# ---
+# name: TestLanguage.test_bcp_47
+  '''
+  <language>
+    <value>en-us</value>
+  </language>
+  
+  '''
+# ---
+# name: TestLanguage.test_iso_639_1
+  '''
+  <language>
+    <value>en</value>
+  </language>
+  
+  '''
+# ---
+# name: TestLanguage.test_iso_639_3
+  '''
+  <language>
+    <value>eng</value>
+  </language>
+  
+  '''
+# ---
+# name: TestLanguage.test_none
+  '''
+  <language/>
+  
+  '''
+# ---
+# name: TestLanguage.test_optional
+  '''
+  <language>
+    <value>en</value>
+  </language>
+  
+  '''
+# ---
+# name: TestMediaType.test_none
+  '''
+  <media-type/>
+  
+  '''
+# ---
+# name: TestMediaType.test_optional
+  '''
+  <media-type>
+    <value>text/vtt</value>
+  </media-type>
+  
+  '''
+# ---
+# name: TestMediaType.test_true
+  '''
+  <media-type>
+    <value>application/xml</value>
+  </media-type>
+  
+  '''
+# ---
+# name: TestUUIDv5.test_none
+  '''
+  <uuid5/>
+  
+  '''
+# ---
+# name: TestUUIDv5.test_optional
+  '''
+  <uuid5>
+    <value>1f252349-fb78-541d-aee2-613778f8eb08</value>
+  </uuid5>
+  
+  '''
+# ---
+# name: TestUUIDv5.test_string
+  '''
+  <uuid5>
+    <value>1f252349-fb78-541d-aee2-613778f8eb08</value>
+  </uuid5>
+  
+  '''
+# ---
+# name: TestUUIDv5.test_uuid
+  '''
+  <uuid5>
+    <value>1f252349-fb78-541d-aee2-613778f8eb08</value>
+  </uuid5>
+  
+  '''
+# ---
+# name: TestUUIDv5.test_uuid_string
+  '''
+  <uuid5>
+    <value>1f252349-fb78-541d-aee2-613778f8eb08</value>
+  </uuid5>
+  
+  '''
+# ---
+# name: TestYesBool.test_false
+  '''
+  <yes/>
+  
+  '''
+# ---
+# name: TestYesBool.test_none
+  '''
+  <yes/>
+  
+  '''
+# ---
+# name: TestYesBool.test_optional
+  '''
+  <yes>
+    <value>yes</value>
+  </yes>
+  
+  '''
+# ---
+# name: TestYesBool.test_true
+  '''
+  <yes>
+    <value>yes</value>
+  </yes>
+  
+  '''
+# ---
+# name: TestYesNoBool.test_false
+  '''
+  <yes-no>
+    <value>no</value>
+  </yes-no>
+  
+  '''
+# ---
+# name: TestYesNoBool.test_none
+  '''
+  <yes-no/>
+  
+  '''
+# ---
+# name: TestYesNoBool.test_optional
+  '''
+  <yes-no>
+    <value>yes</value>
+  </yes-no>
+  
+  '''
+# ---
+# name: TestYesNoBool.test_true
+  '''
+  <yes-no>
+    <value>yes</value>
+  </yes-no>
+  
+  '''
+# ---

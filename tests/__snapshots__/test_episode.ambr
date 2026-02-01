@@ -1,0 +1,33 @@
+# serializer version: 1
+# name: test_full_episode
+  '''
+  <item xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:podcast="https://podcastindex.org/namespace/1.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:media="http://search.yahoo.com/mrss/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:psc="http://podlove.org/simple-chapters">
+    <title>Episode title</title>
+    <enclosure url="https://example.com/audio.mp3" length="30000" type="audio/mpeg"/>
+    <guid isPermaLink="true">example-guid</guid>
+    <link>https://example.com</link>
+    <pubDate>Thu, 20 Jul 2000 10:55:40 +0000</pubDate>
+    <description><![CDATA[Episode description]]></description>
+    <itunes:duration>4555</itunes:duration>
+    <itunes:image href="https://example.com/episode.png"/>
+    <itunes:explicit>true</itunes:explicit>
+    <itunes:block>yes</itunes:block>
+    <podcast:transcript url="https://example.com/transcript.html" type="text/html" language="en"/>
+    <podcast:transcript url="https://example.com/transcript.vtt" type="text/vtt" language="de"/>
+    <psc:chapters version="1.2">
+      <chapter start="00:10:00.200" title="Chapter 1"/>
+    </psc:chapters>
+  </item>
+  
+  '''
+# ---
+# name: test_minimal_episode
+  '''
+  <item xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:podcast="https://podcastindex.org/namespace/1.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:media="http://search.yahoo.com/mrss/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:psc="http://podlove.org/simple-chapters">
+    <title>Episode title</title>
+    <enclosure url="https://example.com/audio.mp3" length="30000" type="audio/mpeg"/>
+    <guid>https://example.com/episode.html</guid>
+  </item>
+  
+  '''
+# ---

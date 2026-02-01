@@ -1,14 +1,53 @@
 [project]
 name = "podryk"
 version = "0.1.0"
-description = "Add your description here"
+description = "A podcast feed generator"
+keywords = ["podcast", "rss", "feed", "podcasting", "audio"]
 readme = "README.md"
 authors = [
     { name = "Julien Hadley Jack", email = "git@jlhj.de" }
 ]
-requires-python = ">=3.11"
-dependencies = []
+license = "MIT"
+license-files = [
+    "LICENSE.txt",
+]
+requires-python = ">=3.13"
+dependencies = [
+    "content-types>=0.3.0",
+    "pydantic-xml[lxml]>=2.18.0",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+    "Topic :: Multimedia :: Sound/Audio",
+    "Typing :: Typed",
+]
+
+[project.urls]
+Homepage = "https://github.com/julien-hadleyjack/podryk"
+Repository = "https://github.com/julien-hadleyjack/podryk"
+Issues = "https://github.com/julien-hadleyjack/podryk/issues"
 
 [build-system]
 requires = ["uv_build>=0.9.6,<0.10.0"]
 build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "cogapp>=3.6.0",
+    "coverage>=7.13.3",
+    "pytest>=9.0.2",
+    "ruff>=0.14.14",
+    "syrupy>=5.1.0",
+]
+
+[tool.pytest]
+addopts = ["--snapshot-patch-pycharm-diff"]
+
+[tool.ruff]
+line-length = 120

@@ -1,0 +1,164 @@
+# serializer version: 1
+# name: test_full_podcast
+  '''
+  <channel xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:podcast="https://podcastindex.org/namespace/1.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:media="http://search.yahoo.com/mrss/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:psc="http://podlove.org/simple-chapters">
+    <title>Podcast title</title>
+    <description><![CDATA[Podcast description]]></description>
+    <link>https://example.com/episode.html</link>
+    <language>en</language>
+    <item>
+      <title>Episode title</title>
+      <enclosure url="https://example.com/audio.mp3" length="30000" type="audio/mpeg"/>
+      <guid isPermaLink="false">example-guid</guid>
+    </item>
+    <itunes:explicit>true</itunes:explicit>
+    <itunes:image href="https://example.com/podcast.png"/>
+    <atom:link href="https://example.com/feed.rss" rel="self" type="application/rss+xml"/>
+    <itunes:category text="Arts">
+      <itunes:category text="Books"/>
+      <itunes:category text="Design"/>
+      <itunes:category text="Fashion &amp; Beauty"/>
+      <itunes:category text="Food"/>
+      <itunes:category text="Performing Arts"/>
+      <itunes:category text="Visual Arts"/>
+    </itunes:category>
+    <itunes:category text="Business">
+      <itunes:category text="Careers"/>
+      <itunes:category text="Entrepreneurship"/>
+      <itunes:category text="Investing"/>
+      <itunes:category text="Management"/>
+      <itunes:category text="Marketing"/>
+      <itunes:category text="Non-Profit"/>
+    </itunes:category>
+    <itunes:category text="Comedy">
+      <itunes:category text="Comedy Interviews"/>
+      <itunes:category text="Improv"/>
+      <itunes:category text="Stand-Up"/>
+    </itunes:category>
+    <itunes:category text="Education">
+      <itunes:category text="Courses"/>
+      <itunes:category text="How To"/>
+      <itunes:category text="Language Learning"/>
+      <itunes:category text="Self-Improvement"/>
+    </itunes:category>
+    <itunes:category text="Fiction">
+      <itunes:category text="Comedy Fiction"/>
+      <itunes:category text="Drama"/>
+      <itunes:category text="Science Fiction"/>
+    </itunes:category>
+    <itunes:category text="Government"/>
+    <itunes:category text="History"/>
+    <itunes:category text="Health &amp; Fitness">
+      <itunes:category text="Alternative Health"/>
+      <itunes:category text="Fitness"/>
+      <itunes:category text="Medicine"/>
+      <itunes:category text="Mental Health"/>
+      <itunes:category text="Nutrition"/>
+      <itunes:category text="Sexuality"/>
+    </itunes:category>
+    <itunes:category text="Kids &amp; Family">
+      <itunes:category text="Education for Kids"/>
+      <itunes:category text="Parenting"/>
+      <itunes:category text="Pets &amp; Animals"/>
+      <itunes:category text="Stories for Kids"/>
+    </itunes:category>
+    <itunes:category text="Leisure">
+      <itunes:category text="Animation &amp; Manga"/>
+      <itunes:category text="Automotive"/>
+      <itunes:category text="Aviation"/>
+      <itunes:category text="Crafts"/>
+      <itunes:category text="Games"/>
+      <itunes:category text="Hobbies"/>
+      <itunes:category text="Home &amp; Garden"/>
+      <itunes:category text="Video Games"/>
+    </itunes:category>
+    <itunes:category text="Music">
+      <itunes:category text="Music Commentary"/>
+      <itunes:category text="Music History"/>
+      <itunes:category text="Music Interviews"/>
+    </itunes:category>
+    <itunes:category text="News">
+      <itunes:category text="Business News"/>
+      <itunes:category text="Daily News"/>
+      <itunes:category text="Entertainment News"/>
+      <itunes:category text="News Commentary"/>
+      <itunes:category text="Politics"/>
+      <itunes:category text="Sports News"/>
+      <itunes:category text="Tech News"/>
+    </itunes:category>
+    <itunes:category text="Religion &amp; Spirituality">
+      <itunes:category text="Buddhism"/>
+      <itunes:category text="Christianity"/>
+      <itunes:category text="Hinduism"/>
+      <itunes:category text="Islam"/>
+      <itunes:category text="Judaism"/>
+      <itunes:category text="Religion"/>
+      <itunes:category text="Spirituality"/>
+    </itunes:category>
+    <itunes:category text="Science">
+      <itunes:category text="Astronomy"/>
+      <itunes:category text="Chemistry"/>
+      <itunes:category text="Earth Sciences"/>
+      <itunes:category text="Life Sciences"/>
+      <itunes:category text="Mathematics"/>
+      <itunes:category text="Natural Sciences"/>
+      <itunes:category text="Nature"/>
+      <itunes:category text="Physics"/>
+      <itunes:category text="Social Sciences"/>
+    </itunes:category>
+    <itunes:category text="Society &amp; Culture">
+      <itunes:category text="Documentary"/>
+      <itunes:category text="Personal Journals"/>
+      <itunes:category text="Philosophy"/>
+      <itunes:category text="Places &amp; Travel"/>
+      <itunes:category text="Relationships"/>
+    </itunes:category>
+    <itunes:category text="Sports">
+      <itunes:category text="Baseball"/>
+      <itunes:category text="Basketball"/>
+      <itunes:category text="Cricket"/>
+      <itunes:category text="Fantasy Sports"/>
+      <itunes:category text="Football"/>
+      <itunes:category text="Golf"/>
+      <itunes:category text="Hockey"/>
+      <itunes:category text="Rugby"/>
+      <itunes:category text="Running"/>
+      <itunes:category text="Soccer"/>
+      <itunes:category text="Swimming"/>
+      <itunes:category text="Tennis"/>
+      <itunes:category text="Volleyball"/>
+      <itunes:category text="Wilderness"/>
+      <itunes:category text="Wrestling"/>
+    </itunes:category>
+    <itunes:category text="Technology"/>
+    <itunes:category text="True Crime"/>
+    <itunes:category text="TV &amp; Film">
+      <itunes:category text="After Shows"/>
+      <itunes:category text="Film History"/>
+      <itunes:category text="Film Interviews"/>
+      <itunes:category text="Film Reviews"/>
+      <itunes:category text="TV Reviews"/>
+    </itunes:category>
+  </channel>
+  
+  '''
+# ---
+# name: test_minimal_podcast
+  '''
+  <channel xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:podcast="https://podcastindex.org/namespace/1.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:media="http://search.yahoo.com/mrss/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:psc="http://podlove.org/simple-chapters">
+    <title>Podcast title</title>
+    <description><![CDATA[Podcast description]]></description>
+    <link>https://example.com/episode.html</link>
+    <language>en</language>
+    <item>
+      <title>Episode title</title>
+      <enclosure url="https://example.com/audio.mp3" length="30000" type="audio/mpeg"/>
+      <guid isPermaLink="false">example-guid</guid>
+    </item>
+    <itunes:explicit>false</itunes:explicit>
+    <itunes:image href="https://example.com/podcast.png"/>
+    <atom:link href="https://example.com/feed.rss" rel="self" type="application/rss+xml"/>
+  </channel>
+  
+  '''
+# ---
