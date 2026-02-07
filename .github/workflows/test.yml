@@ -6,6 +6,13 @@ on:
     branches: [main]
   workflow_dispatch:
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -26,7 +33,7 @@ jobs:
         run: ruff check --output-format=github
 
       - name: Check examples in README
-        run: cog --diff --check --check-fail-msg='Update examples with "cog -r README.md"' README.md
+        run: cog --diff --check --check-fail-msg='Update examples in README.md with "cog -r README.md".' README.md
 
       - name: Run tests
         run: pytest --cov=podryk --github-report
