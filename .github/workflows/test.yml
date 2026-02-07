@@ -1,0 +1,32 @@
+name: Test
+
+on:
+  push:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          cache-python: "true"
+          activate-environment: "true"
+
+      - name: Install dependencies
+        run: uv sync --locked --all-extras --dev
+
+      - name: Lint
+        run: ruff check --output-format=github
+
+      - name: Check examples in README
+        run: cog --diff --check --check-fail-msg='Update examples with "cog -r README.md"' README.md
+
+      - name: Run tests
+        run: pytest --cov=podryk --github-report

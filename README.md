@@ -13,7 +13,7 @@ Podryk is opinionated: If there is multiple conflicting specifications for a fea
 
 You can install the python library with:
 
-```shell
+```bash
 pip install podryk
 ```
 

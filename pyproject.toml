@@ -42,12 +42,39 @@ dev = [
     "cogapp>=3.6.0",
     "coverage>=7.13.3",
     "pytest>=9.0.2",
+    "pytest-cov>=7.0.0",
+    "pytest-github-report>=0.0.1",
+    "python-semantic-release>=10.5.3",
     "ruff>=0.14.14",
     "syrupy>=5.1.0",
 ]
 
-[tool.pytest]
+[tool.uv]
+required-version = ">=0.9.6"
+
+[tool.pytest.ini_options]
 addopts = ["--snapshot-patch-pycharm-diff"]
 
 [tool.ruff]
 line-length = 120
+
+[tool.semantic_release]
+build_command = """
+    uv lock --upgrade-package "$PACKAGE_NAME"
+    git add uv.lock
+    uv build
+"""
+
+[tool.semantic_release.changelog]
+changelog_file = "CHANGELOG.md"
+exclude_commit_patterns = [
+    '''chore(?:\([^)]*?\))?: .+''',
+    '''ci(?:\([^)]*?\))?: .+''',
+    '''refactor(?:\([^)]*?\))?: .+''',
+    '''style(?:\([^)]*?\))?: .+''',
+    '''test(?:\([^)]*?\))?: .+''',
+    '''docs(?:\([^)]*?\))?: .+''',
+    '''build(?:\([^)]*?\))?: .+''',
+    '''build\((?!deps\): .+)''',
+    '''project scaffold''',
+]
