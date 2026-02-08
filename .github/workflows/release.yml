@@ -50,11 +50,11 @@ jobs:
 
           semantic-release --verbose --strict version $extra_args
 
-      - name: Publish release artifacts
-        if: ${{ steps.release.outputs.released == 'true' }}
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: semantic-release publish
+#       - name: Publish release artifacts
+#         if: ${{ steps.release.outputs.released == 'true' }}
+#         env:
+#           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#         run: semantic-release publish
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4

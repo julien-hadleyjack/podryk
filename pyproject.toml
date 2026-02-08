@@ -61,6 +61,7 @@ addopts = ["--snapshot-patch-pycharm-diff"]
 line-length = 120
 
 [tool.semantic_release]
+version_toml = ["pyproject.toml:project.version"]
 build_command = """
     uv lock --upgrade-package "$PACKAGE_NAME"
     git add uv.lock
@@ -68,7 +69,6 @@ build_command = """
 """
 
 [tool.semantic_release.changelog]
-changelog_file = "CHANGELOG.md"
 exclude_commit_patterns = [
     '''chore(?:\([^)]*?\))?: .+''',
     '''ci(?:\([^)]*?\))?: .+''',
@@ -80,3 +80,6 @@ exclude_commit_patterns = [
     '''build\((?!deps\): .+)''',
     '''project scaffold''',
 ]
+
+[semantic_release.changelog.default_templates]
+changelog_file = "CHANGELOG.md"
