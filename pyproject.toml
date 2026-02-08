@@ -1,6 +1,6 @@
 [project]
 name = "podryk"
-version = "0.1.0"
+version = "1.0.1"
 description = "A podcast feed generator"
 keywords = ["podcast", "rss", "feed", "podcasting", "audio"]
 readme = "README.md"
