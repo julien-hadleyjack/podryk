@@ -4,8 +4,8 @@ on:
   workflow_dispatch:
     inputs:
       release_type:
-        description: 'Force a specific release type (optional)'
-        required: false
+        description: 'Specify a release type'
+        required: true
         type: choice
         options:
           - auto
@@ -13,6 +13,11 @@ on:
           - minor
           - major
         default: 'auto'
+      dry_run:
+        description: 'Perform a dry run'
+        required: true
+        type: boolean
+        default: false
 
 jobs:
   release:
@@ -43,18 +48,29 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          extra_args=""
-          if [[ "${{ github.event.inputs.release_type }}" != "auto" ]]; then
-            extra_args+=" --${{ github.event.inputs.release_type }}"
+          extra_args="--verbose --strict"
+          if [[ "${{ github.event.inputs.dry_run }}" == "true" ]]; then
+            extra_args+=" --noop"
           fi
 
-          semantic-release --verbose --strict version $extra_args
+          extra_command_args=""
+          if [[ "${{ github.event.inputs.release_type }}" != "auto" ]]; then
+            extra_command_args+=" --${{ github.event.inputs.release_type }}"
+          fi
 
-#       - name: Publish release artifacts
-#         if: ${{ steps.release.outputs.released == 'true' }}
-#         env:
-#           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#         run: semantic-release publish
+          semantic-release $extra_args version $extra_command_args
+
+      - name: Publish release artifacts
+        if: ${{ steps.release.outputs.released == 'true' }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          extra_args="--verbose --strict"
+          if [[ "${{ github.event.inputs.dry_run }}" == "true" ]]; then
+            extra_args+=" --noop"
+          fi
+
+          semantic-release $extra_args publish --tag "${{ steps.release.outputs.version }}"
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4

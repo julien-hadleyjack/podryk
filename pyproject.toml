@@ -32,6 +32,7 @@ classifiers = [
 Homepage = "https://github.com/julien-hadleyjack/podryk"
 Repository = "https://github.com/julien-hadleyjack/podryk"
 Issues = "https://github.com/julien-hadleyjack/podryk/issues"
+Changelog = "https://github.com/julien-hadleyjack/podryk/blob/main/CHANGELOG.md"
 
 [build-system]
 requires = ["uv_build>=0.9.6,<0.10.0"]
@@ -78,7 +79,6 @@ exclude_commit_patterns = [
     '''docs(?:\([^)]*?\))?: .+''',
     '''build(?:\([^)]*?\))?: .+''',
     '''build\((?!deps\): .+)''',
-    '''project scaffold''',
 ]
 
 [semantic_release.changelog.default_templates]
